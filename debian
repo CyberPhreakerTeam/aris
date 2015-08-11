@@ -155,18 +155,17 @@ wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/login && ch
 clear
 echo "===============================================" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
-echo "Webmin      : https://$MYIP:10000/" | tee -a log-install.txt
+echo "Webmin      : https://IPSERVER:10000/" | tee -a log-install.txt
 echo "OpenVPN     : TCP 1194" | tee -a log-install.txt
 echo "OpenSSH     : 22, 143" | tee -a log-install.txt
 echo "Dropbear    : 109, 110, 443" | tee -a log-install.txt
 echo "Squid       : 80, 8080 limit to IP SSH" | tee -a log-install.txt
 echo "BadVPN      : badvpn-udpgw port 7300" | tee -a log-install.txt
-echo "" | tee -a log-install.txt
 echo "cek expired : ./expired" | tee -a log-install.txt
 echo "cek akun    : ./akun" | tee -a log-install.txt
 echo "cek login   : ./login" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "===============================================" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
-echo " SILAHKAN REBOOT VPS ANDA " | tee -a log-install.txt
+echo "SILAHKAN REBOOT VPS ANDA" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
