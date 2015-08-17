@@ -31,6 +31,9 @@ apt-get -y --purge remove bind9*;
 # update
 apt-get update; apt-get -y upgrade;
 
+# install nano
+apt-get install nano
+
 # install webserver
 apt-get -y install nginx php5-fpm php5-cli
 
