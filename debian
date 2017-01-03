@@ -148,33 +148,35 @@ rm /root/webmin_1.660_all.deb
 service webmin restart
 service vnstat restart
 
-# downlaod autokill
+# downlaod script
 cd /usr/bin/
 wget https://raw.githubusercontent.com/galihrezah/kill/master/killmultilogindropbear --no-check-certificate -O kill
+wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/expired
+wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/akun
+wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/login
+wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/reboot
 chmod +x /usr/bin/kill
+chmod +x /usr/bin/expired
+chmod +x /usr/bin/akun
+chmod +x /usr/bin/login
+chmod +x /usr/bin/reboot
 echo "* * * * * root /usr/bin/kill" >> /etc/crontab
-
-# downlaod script
+echo "0 */12 * * * root /usr/bin/expired" >> /etc/crontab
+echo "0 0 * * * root /usr/bin/reboot" >> /etc/crontab
 cd
-wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/expired && chmod +x expired
-wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/akun && chmod +x akun
-wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/login && chmod +x login
-
-
 
 # info
 clear
 echo "===============================================" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
-echo "Webmin      : http://IPSERVER:10000/" | tee -a log-install.txt
+echo "Webmin      : https://IPSERVER:10000/" | tee -a log-install.txt
 echo "OpenVPN     : TCP 1194" | tee -a log-install.txt
 echo "OpenSSH     : 22, 143" | tee -a log-install.txt
 echo "Dropbear    : 109, 110, 443" | tee -a log-install.txt
 echo "Squid       : 80, 8080 limit to IP SSH" | tee -a log-install.txt
 echo "BadVPN      : badvpn-udpgw port 7300" | tee -a log-install.txt
-echo "cek expired : ./expired" | tee -a log-install.txt
-echo "cek akun    : ./akun" | tee -a log-install.txt
-echo "cek login   : ./login" | tee -a log-install.txt
+echo "cek akun    : akun" | tee -a log-install.txt
+echo "cek login   : login" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "===============================================" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
