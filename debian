@@ -154,15 +154,15 @@ wget https://raw.githubusercontent.com/galihrezah/kill/master/killmultilogindrop
 wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/expired
 wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/akun
 wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/login
-wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/reboot
+wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/autoreboot
 chmod +x /usr/bin/kill
 chmod +x /usr/bin/expired
 chmod +x /usr/bin/akun
 chmod +x /usr/bin/login
-chmod +x /usr/bin/reboot
+chmod +x /usr/bin/autoreboot
 echo "* * * * * root /usr/bin/kill" >> /etc/crontab
 echo "0 */12 * * * root /usr/bin/expired" >> /etc/crontab
-echo "0 0 * * * root /usr/bin/reboot" >> /etc/crontab
+echo "0 0 * * * root /usr/bin/autoreboot" >> /etc/crontab
 cd
 
 # info
