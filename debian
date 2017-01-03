@@ -135,7 +135,7 @@ apt-get -y install fail2ban;service fail2ban restart
 
 # install squid3
 wget https://github.com/narrundo/vishera/raw/autoscript/squid3.sh
-chmod 100 squid3.sh
+chmod +x squid3.sh
 ./squid3.sh
 service squid3 restart
 
@@ -148,11 +148,19 @@ rm /root/webmin_1.660_all.deb
 service webmin restart
 service vnstat restart
 
+# downlaod autokill
+cd /usr/bin/
+wget https://raw.githubusercontent.com/galihrezah/kill/master/killmultilogindropbear --no-check-certificate -O kill
+chmod +x /usr/bin/kill
+echo "* * * * * root /usr/bin/kill" >> /etc/crontab
+
 # downlaod script
 cd
 wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/expired && chmod +x expired
 wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/akun && chmod +x akun
 wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/login && chmod +x login
+
+
 
 # info
 clear
