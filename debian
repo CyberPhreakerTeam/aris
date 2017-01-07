@@ -150,7 +150,7 @@ service vnstat restart
 
 # downlaod script
 cd /usr/bin/
-wget https://raw.githubusercontent.com/galihrezah/kill/master/killmultilogindropbear --no-check-certificate -O kill
+wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/kill
 wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/expired
 wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/akun
 wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/login
@@ -161,6 +161,17 @@ chmod +x /usr/bin/akun
 chmod +x /usr/bin/login
 chmod +x /usr/bin/autoreboot
 echo "* * * * * root /usr/bin/kill" >> /etc/crontab
+echo "* * * * * root sleep 5; /usr/bin/kill" >> /etc/crontab
+echo "* * * * * root sleep 10; /usr/bin/kill" >> /etc/crontab
+echo "* * * * * root sleep 15; /usr/bin/kill" >> /etc/crontab
+echo "* * * * * root sleep 20; /usr/bin/kill" >> /etc/crontab
+echo "* * * * * root sleep 25; /usr/bin/kill" >> /etc/crontab
+echo "* * * * * root sleep 30; /usr/bin/kill" >> /etc/crontab
+echo "* * * * * root sleep 35; /usr/bin/kill" >> /etc/crontab
+echo "* * * * * root sleep 40; /usr/bin/kill" >> /etc/crontab
+echo "* * * * * root sleep 45; /usr/bin/kill" >> /etc/crontab
+echo "* * * * * root sleep 50; /usr/bin/kill" >> /etc/crontab
+echo "* * * * * root sleep 55; /usr/bin/kill" >> /etc/crontab
 echo "0 */12 * * * root /usr/bin/expired" >> /etc/crontab
 echo "0 0 * * * root /usr/bin/autoreboot" >> /etc/crontab
 cd
