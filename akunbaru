@@ -1,1 +1,25 @@
-#!/bin/bashecho "-------------------------------"echo "      ISIKAN FORM DIBAWAH      "echo "-------------------------------"echo ""echo -n "Nama Akun	: "read akunecho -n "Password	: "read passecho -n "Hari Exp	: "read expIP=`ifconfig eth0| awk 'NR==2 {print $2}'| awk -F: '{print $2}'`useradd -e `date -d "$exp days" +"%Y-%m-%d"` -g terial  -s /bin/false -M $akunecho -e "$pass\n$pass\n"|passwd $akun &> /dev/nullecho ""echo "-------------------------------"echo "     AKUNBARU TELAH DIBUAT     "echo "-------------------------------"echo ""echo -e "Username	: $akun"echo -e "Password	: $pass"echo -e "Expired	: $exp hari"echo "-------------------------------"echo ""
+#!/bin/bash
+
+echo "-------------------------------"
+echo "      ISIKAN FORM DIBAWAH      "
+echo "-------------------------------"
+echo ""
+echo -n "Nama Akun	: "
+read akun
+echo -n "Password	: "
+read pass
+echo -n "Hari Exp	: "
+read exp
+IP=`ifconfig eth0| awk 'NR==2 {print $2}'| awk -F: '{print $2}'`
+useradd -e `date -d "$exp days" +"%Y-%m-%d"` -g terial  -s /bin/false -M $akun
+echo -e "$pass\n$pass\n"|passwd $akun &> /dev/null
+echo ""
+echo "-------------------------------"
+echo "     AKUNBARU TELAH DIBUAT     "
+echo "-------------------------------"
+echo ""
+echo -e "Username	: $akun"
+echo -e "Password	: $pass"
+echo -e "Expired	: $exp hari"
+echo "-------------------------------"
+echo ""
