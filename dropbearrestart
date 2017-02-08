@@ -1,0 +1,5 @@
+#!/bin/bash
+tanggal=$(date +"%m-%d-%Y")
+waktu=$(date +"%T")
+echo "Dropbear telah berhasil direstart pada tanggal $tanggal pukul $waktu." >> /root/log-dropbear.txt
+service dropbear restart
