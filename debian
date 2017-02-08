@@ -134,10 +134,8 @@ cd
 apt-get -y install fail2ban;service fail2ban restart
 
 # install squid3
-wget https://github.com/narrundo/vishera/raw/autoscript/squid3.sh
-chmod +x squid3.sh
-./squid3.sh
-service squid3 restart
+wget https://raw.githubusercontent.com/CyberPhreakerTeam/aris/master/squid3.sh
+bash squid3.sh
 
 # install webmin
 cd
